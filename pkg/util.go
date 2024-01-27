@@ -16,7 +16,7 @@ func parseType(typeCalc string) (string, error) {
     return "", errors.New(fmt.Sprintf("Invalid calculation type: %s It needs to be 'change' or 'diff", l))
 }
 
-func Start(firstNum, secondNum float64, typeCalc string, decimalPlaces int) (float64, error) {
+func Start(firstNum, secondNum float64, typeCalc string, decimalPlaces uint) (float64, error) {
     var answer float64
     t, err := parseType(typeCalc)
     if err != nil {

@@ -20,13 +20,16 @@ func Start(firstNum, secondNum float64, typeCalc string, decimalPlaces int) (flo
     var answer float64
     t, err := parseType(typeCalc)
     if err != nil {
-        return "", err
+        return 0, err
     }
     if t == "change" {
         answer, err = difference.PercentChange(firstNum, secondNum, decimalPlaces)
     }
     if t == "diff" {
         answer, err = difference.PercentDifference(firstNum, secondNum, decimalPlaces)
+    }
+    if err != nil {
+        return 0, err
     }
     return answer, nil
 }

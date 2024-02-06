@@ -1,7 +1,6 @@
 package pkg
 
 import (
-    "errors"
     "fmt"
     "github.com/sydneyshile/go-difference-check"
     "strings"
@@ -13,7 +12,7 @@ func parseType(typeCalc string) (string, error) {
     if (l == "change") || (l == "diff") {
         return l, nil
     }
-    return "", errors.New(fmt.Sprintf("Invalid calculation type: %s It needs to be 'change' or 'diff", l))
+    return "", fmt.Errorf("invalid calculation type: %s It needs to be 'change' or 'diff", l)
 }
 
 func Start(firstNum, secondNum float64, typeCalc string, decimalPlaces uint) (float64, error) {

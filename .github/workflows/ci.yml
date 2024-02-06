@@ -1,0 +1,34 @@
+name: Continuous Integration Build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+
+  audit:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.21
+
+      - name: Setup dependencies
+        run: make dep
+
+      - name: Build
+        run: make build
+
+      - name: Install staticcheck
+        run: make install-static-check
+
+      - name: Run linting checks(vet and staticcheck)
+        run: make lint
+
+      - name: Run tests
+        run: go test -race -vet=off ./...

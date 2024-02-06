@@ -21,11 +21,12 @@ func main() {
     flag.UintVar(&decimalPlaces, "decimal-places", 2, "How many decimal places woudl you like to round your answer to?")
     flag.UintVar(&decimalPlaces, "dp", 2, "How many decimal places woudl you like to round your answer to?")
     flag.StringVar(&typeCalc, "type", "diff", "What type of calculation do you want to do? valid options are 'change' or 'diff'")
-    flag.StringVar(&typeCalc, "type", "diff", "What type of calculation do you want to do, Percent Difference or Percent Change? valid options are 'change' or 'diff'")
+    flag.StringVar(&typeCalc, "t", "diff", "What type of calculation do you want to do, Percent Difference or Percent Change? valid options are 'change' or 'diff'")
+    flag.Parse()
     answer, err = pkg.Start(numOne, numTwo, typeCalc, decimalPlaces)
     s := fmt.Sprintf("%e", answer)
     if err != nil {
-        panic(err)
+        fmt.Println(err)
     }
     fmt.Println(s)
 }

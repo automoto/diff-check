@@ -15,9 +15,9 @@ func main() {
     var err error
 
     flag.Float64Var(&numOne, "first", 0, "first number to do calculations on")
-    flag.Float64Var(&numOne, "f", 0, "first number to do calculations on")
+    flag.Float64Var(&numOne, "1", 0, "first number to do calculations on")
     flag.Float64Var(&numTwo, "second", 0, "second number to do calculations on")
-    flag.Float64Var(&numTwo, "s", 0, "second number to do calculations on")
+    flag.Float64Var(&numTwo, "2", 0, "second number to do calculations on")
     flag.UintVar(&decimalPlaces, "decimal-places", 2, "How many decimal places woudl you like to round your answer to?")
     flag.UintVar(&decimalPlaces, "dp", 2, "How many decimal places woudl you like to round your answer to?")
     flag.StringVar(&typeCalc, "type", "diff", "What type of calculation do you want to do? valid options are 'change' or 'diff'")

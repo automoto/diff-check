@@ -24,7 +24,7 @@ func main() {
     flag.StringVar(&typeCalc, "t", "diff", "What type of calculation do you want to do, Percent Difference or Percent Change? valid options are 'change' or 'diff'")
     flag.Parse()
     answer, err = pkg.Start(numOne, numTwo, typeCalc, decimalPlaces)
-    s := fmt.Sprintf("%e", answer)
+    s := fmt.Sprintf("%f", answer)
     if err != nil {
         fmt.Println(err)
     }

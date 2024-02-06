@@ -11,7 +11,8 @@ last_version() {
     cut -f1 -d'/'|
     rev
 }
-
+# example url for mac
+# https://github.com/automoto/diff-check/releases/download/v0.0.2/diff-check_Darwin_arm64.tar.gz
 download() {
   test -z "$VERSION" && VERSION="$(last_version)"
   test -z "$VERSION" && {
@@ -19,10 +20,10 @@ download() {
     exit 1
   }
   FILE_VERSION="$(echo "$VERSION" | tr -d v)"
-  FINAL_URL="$RELEASES_URL/download/$VERSION/diff-check_${FILE_VERSION}_$(uname -s)_$(uname -m).tar.gz"
+  FINAL_URL="$RELEASES_URL/download/$VERSION/diff-check_$(uname -s)_$(uname -m).tar.gz"
   echo "Downloading latest release from: \n$FINAL_URL"
   rm -f "$TAR_FILE"
-  curl -s -L -o "$TAR_FILE" \
+  curl -s -L -v -o "$TAR_FILE" \
     "$FINAL_URL"
 }
 

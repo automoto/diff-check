@@ -38,3 +38,4 @@ test-ci:
 
 latest-release:
 	curl -sL https://api.github.com/repos/automoto/diff-check/releases/latest | jq -r '.assets[].browser_download_url'
+

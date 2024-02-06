@@ -14,8 +14,7 @@ move-to-bin:
 	@sudo cp diff-check /usr/local/bin
 	@echo "Done."
 
-install:
-	make build && make move-to-bin
+install: build move-to-bin
 
 lint: install-static-check lint vet
 

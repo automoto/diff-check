@@ -1,7 +1,7 @@
 # diff-check
 Commandline app for calculating the difference between numbers. We currently support two kinds of calculations:
-- Percent Difference: Percent difference is typically used to compare two quantities to find the difference between them, expressed as a percentage of the average of the two values. It's often used in scientific experiments or statistical analysis to compare two distinct values without prioritizing one as the "initial" or "final" value.
-- Percent Change: Percent change is used to express how much a quantity has increased or decreased relative to its original value. It's a way to describe the change in a value over time as a percentage.
+- Percent Difference: Percent difference is typically used to compare two values and determine how much greater or less one value is than the other
+- Percent Change: Percent change is used to express how much a number has increased or decreased relative to another number. It's a way to describe the change in a value over time as a percentage.
 
 This mostly uses the go-difference-check library to do its calculations which is available here https://github.com/sydneyshile/go-difference-check
 
